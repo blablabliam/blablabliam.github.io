@@ -44,18 +44,47 @@ div.desc {
 </head>
 <body>
 
-<h1>
+<h2>
 Howdy selector!
-</h1>
+</h2>
 
 <select class="howdy" id="unit-howdy">
 	<option value="HOWDY">HOWDY</option>
 	<option value="howdy">howdy</option>
 </select>
 
-<input id="input" autofocus type="text" inputmode="string" value="1" class="howdyer">
+<input id="input" autofocus type="text" inputmode="string" value="" class="howdyer">
 
+<h2>Calculator Tutorial</h2>
 
+<form name="calculator">
+<!-- This is a tutorial, form creates the overall space, table generates
+a table, tr generates a row in the table, td generates a space in the row,
+and input makes an input area to type in. Disabled is a boolean that prevents
+anyone from clicking and using the input except the page. -->
+	<table>
+		<tr>
+			<td>
+				<input type="text" name="display" disabled>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="one" value="1" onclick="calculator.display.value += '1'">
+			</td>
+			<td>
+				<input type="button" name="two" value="2" onclick="calculator.display.value += '2'">
+			</td>
+			<td>
+				<input type="button" name="three" value="3" onclick="calculator.display.value += '3'">
+			</td>
+			<td>
+				<input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'">
+			</td>
+		</tr>
+	</table>
+
+</form>
 
 
 
