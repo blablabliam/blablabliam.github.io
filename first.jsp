@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <style>
@@ -44,20 +43,20 @@ div.desc {
 </style>
 </head>
 <body>
-<ul>
-<p> This program opens an IDLE tab.</p>
-<pre>idle newscript.py</pre>
 
-
-<p> Link to a page that runs a Java script with JSP </p>
-<a href="https://blablabliam.github.io/first.jsp">Java Program</a>
-
-
-<hr>
-<ul>
-<button><a href="https://blablabliam.github.io/">Home</a></button>
-<button><a href="https://blablabliam.github.io/scripts.html">Scripts</a></button>
-<button><a href="https://blablabliam.github.io/projects/projects">Projects</a></button>
-</ul>
+<p> Lets see if this works. </p>
+  <%
+    double num = Math.random();
+    if (num > 0.95) {
+  %>
+      <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
+  <%
+    } else {
+  %>
+      <h2>Well, life goes on ... </h2><p>(<%= num %>)</p>
+  <%
+    }
+  %>
+  <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
 </body>
 </html>
