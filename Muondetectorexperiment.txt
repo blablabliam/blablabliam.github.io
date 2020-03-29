@@ -1,0 +1,32 @@
+
+
+Designing and Implementing a Research Project : Liam Plybon
+
+The steps of a research project are as follows.
+1) Research the subject to see if the work has already been done for you, and what possible hazards may exist.
+2) Define a goal for the project.
+3) Design an apparatus to collect data, and troubleshoot until it works.
+4) Organize the collected data to show trends and experimental faults.
+5) Report the experiment, data, and any errors to anyone interested.
+
+For example, the last project I worked on was a Muon Detector experiment. The concrete goal in the experiment was given by the instructor, so research was done with a goal already in mind. 
+
+1) Detect muons with some method of defining a direction.
+2) Confirm the East-West Effect and North-South Effect, where muon flux is different depending on what direction the detector pointed.
+3) Determine the muon flux curve in altitude.
+
+We researched what these effects were, referring to original papers. We also asked people we knew at A&amp;M that might know more about the experiment process. The research helped us define metrics for comparing our data, showed us previously collected data to compare with our work, and helped with the design of the experiment.
+
+To meet these goals, we developed equipment to meet these goals: a pair of Geiger-Muller tubes built with glass and tungsten wire, connected to a coincidence detector circuit and a counter. This would tell us how many muons were passing through both tubes at the same time as a rate. By pointing the two tubes East-West or North-South, and pointing them in increments of altitude, we were able to confirm the effects listed in our goals. 
+
+Next, we had to test the apparatus we built to make sure it was working. To do this, we had to test each component independently. For the tubes, we ran a vacuum pressure test to make sure the tubes didn't leak gas, a current and continuity test on the interior wire to check it was not broken and that the filament was able to handle the high temperature, and a opaqueness test to make sure light wouldn't cause the tubes to discharge without a muon. The circuit was first tested by visual inspection and continuity tests, then with a function test using a function generator, power supply, and oscilloscope. The counter was tested with the coincidence detector running on a function detector.
+
+The experiment had to be redesigned several times to detect muons. We fixed a problem with the tubes building up charge by installing an interior ground wire, and problem with the circuit by building a separate amplifier. Ultimately, the counter was never able to properly count the pulses shown on the oscilloscope, so we had to count the pulses on the screen. 
+
+Unfortunately, none of the groups, including mine, were able to resolve all the problems in the experiment by the end of the semester, so data analysis was done with data prepared by a TA.
+
+Data was collected on both tubes independently to determine their operating voltage, and what the count floor should be. Then, data was collected by scanning the entire hemisphere with the counter, so that the flux could be measured in all directions. Error was determined by taking multiple measurements at fixed points and using the standard deviation. 
+
+The data was plotted to show the North-South and East-West effect by plotting counts only at 60 degrees above the horizon in a circle. The data was fit to a function described in the literature, and error from the fit was used as a metric or success.
+
+In the final report I wrote, I showed problems with the experiment that we were unable to correct. One was that the tubes were designed with thigh glass, which built up a charge as the tube operated. I demonstrated the problem with a plot of counts over time tapering off with a negative exponential in time. This could have been fixed by either using a metal tube as in industry standard tubes, or by using thinner glass that would be less likely to store charge. In addition, the two tubes used the same gas intake, but gas had to flow through one tube and into the other. This meant that the second tube was getting a portion of spent gas from the first tube. I tried to make a T fitting from old glass, but the flow rate was different through the two sides.
