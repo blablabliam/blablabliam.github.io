@@ -123,7 +123,27 @@ append function. Append adds to the end of the line.
 
 </form>
 
+<h2> CPx Calculator Function </h2>
 
+<p>Enter the CPx Serial Number in the text box, and press Calculate to get the Default IP Address of the CPx.</p>
+
+<input type="text" id="SN" name="Serial Number" value="Serial Number"><br>
+
+<p id="demo">Default IP</p>
+
+<script>
+function calculateIP() {
+	var number = document.getElementById("SN").value;
+    var iP1 = "169.254";
+    var iP3 = Math.floor(number / 256);
+    var iP4 = 256 * ( (number / 256) - Math.floor(number/256));
+    var iP = iP1 + "." + iP3 + "." + iP4;
+    document.getElementById("demo").innerHTML = iP;
+    }
+
+</script>
+
+<button type="button" onclick="calculateIP()">Calculate</button>
 
 </body>
 </html>
