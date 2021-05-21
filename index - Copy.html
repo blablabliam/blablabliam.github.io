@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<!-- 	This is the "Head" of the HTML document.
+		It contains information that isn't displayed on the actual page, but is useful
+		for the web browser when loading the page	
+	-->
+	<head>
+		<!-- This is the title of the page. It is the text that appears inside this pages tab in your web browser -->
+		<title>Liam Plybon</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- 	This links to this page's CSS, which is contained in the folder assets/css and the file main.css.
+			 If you want to edit the styling of this page, you should edit the file assets/css/main.css
+			 If you have a new CSS file you'd like to add with custom styling, you should link to it here using:
+			 <link rel="stylesheet" href="assets/css/my-new-css-file.css"/> 
+		-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- 	In the case that the user's browser does not support JavaScript (unlikely, but possible), the page
+			will load a separate set of CSS stylings from the file assets/css/noscript.css
+			Any HTML contained inside <noscript></noscript> tags will be loaded in the event that JavaScript is not
+			available. 
+		-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<!-- The body is the location where your site's content will go -->
+	<body class="is-preload">
+
+			<!-- This "div" wraps around all of our content and just changes how things are layed out -->
+			<div id="wrapper">
+
+					<!-- This is where the content that appears on page load exists -->
+					<header id="header">
+						<!-- This is the main content of the front page -->
+						<div class="content">
+							<div class="inner">
+								<!-- Here is a heading where you can put your name -->
+								<h1>
+									Liam Plybon
+								</h1>
+								<!-- 	Here is an image where you can put a picture of you. 
+									You can change the width and height attributes below to change how large
+									your image is.
+
+									Try adding "border-radius: 50%;" to the style attribute.
+								-->
+								<img src="images/Astronomy.jpg" style="width:280px; height:280px; object-fit: cover;">
+								<!-- 	Here is a paragraph where you can put your position and institution, or
+									a short line about yourself.
+								-->
+								<p>
+									Engineer || Astro-Physics Inc.
+								</p>
+								<!-- Here is a paragraph where you can put a link to your CV -->
+								<p>
+									<!-- Note you will want to change where this points to! -->
+									<a href="2021_CV.pdf" target="_blank">Curriculum Vitae</a>
+								</p>
+							</div>
+						</div>
+						<!-- This is the navigation menu -->
+						<nav>
+							<!-- This element makes an "Unordered List" -->
+							<ul>
+								<!-- This is a "List Item" -->
+								<li>
+									<!-- 	Note that this links to #about, which will move the page to wherever
+										the element with the id "about" exists.
+									-->
+									<a href="#about">About Me</a>
+								</li>
+								<li>
+									<a href="#research">Research</a>
+								</li>
+								<li>
+									<a href="#community">Community</a>
+								</li>
+								<li>
+									<a href="#contact">Contact</a>
+								</li>
+								<!-- 	You can add another button to your navigation menu by adding
+									another List Item with a link inside of it.
+								-->
+								<!-- <li>
+									<a href="images/Astronomy.jpg">My CV</a>
+								</li> -->
+							</ul>
+						</nav>
+					</header>
+
+					<!-- These are the "cards" that appear when you click the buttons on the main page -->
+					<div id="main">
+						<!-- 	Here is the "About Me" card. Note it has the id "about", which the previous 
+							button links to.
+						-->
+						<article id="about">
+							<h2 class="major">About Me</h2>
+							<!-- Here is an image that you can customize for this page -->
+							<span class="image main">
+								<img src="images/pic01.jpg" alt=""/>
+							</span>
+							<!-- Here are three paragraphs where you can fill out information about yourself -->
+							<p>
+								<!-- Items contained in <b> tags are bolded! -->
+								<b>Education: </b> Bachelors of Science in Physics, Minor in Astrophysics from Texas A&M University. 
+							</p>
+							<p>
+								<b>Research Interests: </b> Variable Stars, Particle Astronomy, Material Science and Astronomical Software 
+							</p>
+							<p>
+								<b>Publications:</b> <a href="https://ui.adsabs.harvard.edu/abs/2019yCat..51580016S/abstract">VizieR Online Data Catalog: Identification of RR Lyrae stars from the DES (Stringer+, 2019)</a>, <a href="https://ui.adsabs.harvard.edu/abs/2019AJ....158...16S/abstract">Identification of RR Lyrae Stars in Multiband, Sparsely Sampled Data from the Dark Energy Survey Using Template Fitting and Random Forest Classification</a>
+							</p>
+							<p>
+								<b>Presentations: </b> <a href="AmateurParticleAstronomy.pptx">Amateur Particle Astronomy, Rockford Amateur Astronomers, Feb 2021</a> 
+						</article>
+
+						<!-- Here is the "Research" card. -->
+						<article id="research">
+							<h2 class="major">Research</h2>
+							<span class="image main">
+								<img src="images/pic02.jpg" alt=""/>
+							</span>
+							<p>
+								<!-- 	A <br> tag puts in a break so that the text that follows it displays on
+									the next line.
+								-->
+								<b>DIY Muon Detectors</b><br>Scintillator and Geiger-Muller based muon detectors for use in amateur particle telescopes. With these, I hope to create the world's first amateur particle telescope network. I gave a talk on the subject for the Rockford Amateur Astronomers in 2021, and have gathered data with my latest detector based on the MIT Cosmic Watch detector design. Future developments planned are incorporating IoT into the detector so that many units can be operated on a large scale. The network will hunt for global cosmic ray anomalies, similar to the CRAYFIS and CREDO detector networks. 
+							</p>
+							<p>
+								<b>Variable Star Observations</b><br>Recording the magnitudes of variable stars visually and with CMOS cameras, with data recorded to the AAVSO under observer code PLLA. Observations can be viewed <a href="aavso.org">on AAVSO's website</a>.
+							</p>
+						</article>
+
+						<!-- Here is the "Community" card. -->
+						<article id="community">
+							<h2 class="major">Community</h2>
+							<span class="image main">
+								<img src="images/pic03.jpg" alt=""/>
+							</span>
+							<p>
+								<b>Teaching:</b> Courses on electronics, circuit board design, and intro programming with arduinos. One-on-one tutoring in physics, mathematics and chemistry. 
+							</p>
+							<p>
+								<b>Outreach:</b> Star parties, marker faires, and talks make up the majority of my outreach events. 
+							</p>
+							<p>
+								<b>Equity & Inclusion:</b> I have taught hands-on astronomy to many girl scout troops, particularly in remote, poorly served areas with lack of scientific access.
+							</p>
+							<p>
+								<b>Outreach on Demand:</b> If you are interested in having a professional astronomer to talk and demo for a school event, class, scout troop, or anything else, please contact me. I really like astronomy, and would be happy to share it with you. 
+							</p>
+						</article>
+
+						<!-- Here is a the "Contact" card. -->
+						<article id="contact">
+							<h2 class="major">Contact</h2>
+							<p> 
+								<b>Email:</b> lplybon1@gmail.com
+							</p>
+							<p> 
+								<b>Address:</b> 2915 Park Terrace Dr, Apt 1, Rockford IL 61114
+							</p>
+
+							<!-- 	Here are the fancy icons that link to your social media.
+								These icons are rendered using Font Awesome fonts, and you can find more icons
+								here: https://fontawesome.com/icons
+							-->
+							<ul class="icons">
+								<!-- The Facebook icon -->
+								<li>
+									<a href="https://www.facebook.com/liam.plybon.3/" class="icon fa-facebook" target="_blank">
+										<span class="label">Facebook</span>
+									</a>
+								</li>
+								<!-- The GitHub icon -->
+								<li>
+									<a href="#" class="icon fa-github" target="_blank">
+										<span class="label">GitHub</span>
+									</a>
+								</li>
+								<!-- 	We can add a new icon by searching on the Font Awesome website
+									for the correct class name and inserting it as a new list item.
+
+									We found "envelope" here: https://fontawesome.com/icons/envelope
+								-->
+								<li>
+									<a href="https://www.linkedin.com/in/liam-plybon-6bb054118/" class="icon fa-linkedin" target="_blank">
+										<span class="label">LinkedIn</span>
+									</a>
+								</li> 
+							</ul>
+						</article>
+					</div>
+
+					<!-- This is the footer that appears at the bottom of the page -->
+					<footer id="footer">
+						<!-- 	You can change "Untitled" to your name to show everyone that
+							this is your work.
+						-->
+						<p class="copyright">&copy; Liam Plybon. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+			<!--	This is the background image of the site.
+				All configuration of the background is done with CSS.
+				Look in the file assets/css/main.css and search for "#bg" to
+				see how this element is styled. Look for comments pointing 
+				to where you can set a new background image.
+			-->
+			<div id="bg"></div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
