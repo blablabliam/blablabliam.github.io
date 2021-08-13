@@ -1,87 +1,323 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-body {background-color: powderblue; margin: 50px}
-h1 {
-    color: blue;
-    font-family: verdena;
-    font-size: 300%;
-}
-h2   {
-	 color: tomato; 
-	 font-family: verdana;
-}
-p    {
-	 color: black;
-	 font-family: helvetica;
-}
-p.error {
-	color: red;
-}
-
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 180px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-</style>
-</head>
-<body>
-<ul>
-<h1 >Liam Plybon</h1>
-<h2>katana@tamu.edu/lplybon1@gmail.com
-<ul>
-512-818-2020</h2>
-<br>
-<h2>Sky forcast for Rockford, Illinois</h2>
-<a href=https://www.cleardarksky.com/c/RckfrdILkey.html>
-<img src="https://www.cleardarksky.com/c/RckfrdILcsk.gif?c=2541636"></a>
-
-
-<br>
-<h2>Links</h2>
-
-<ul>
-	<li><a href="https://blablabliam.github.io">Home</a></li>
-	<!--<li><a href="https://blablabliam.github.io/images/gaiashat.csv">Gaia Data on Varaiable Stars</a></li>-->
-	<!--<li><a href="https://blablabliam.github.io/images/headshot.jpg">Me!</a></li>-->
-	<li><a href="https://blablabliam.github.io/scripts.html">Page containing some scripts I have written.</a></li>
-	<li><a href="https://blablabliam.github.io/projects/projects.html">Projects page.</a></li>
-	<li><a href="https://blablabliam.github.io/papers.html">Papers I am featured in.</a></li>
-	<li><a href="https://blablabliam.github.io/Inspirations.html">Inspirational lines from literature and people.</a></li>
-	<li><a href="https://blablabliam.github.io/projectlist.html">Current project list.</a></li>
-	<li><a href="https://blablabliam.github.io/questions.html">Questions I want to answer.</a></li>
-</ul>
-
-<br>
-<!-- This is a comment! -->
-<!-- <img src="images/headshot.jpg" alt="Me." width="450" height="600" title="Example Tooltip">
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<br>
-</ul>
-<hr>
-<br>
-<ul>
-<button><a href="https://blablabliam.github.io/">Home</a></button>
-<button><a href="https://blablabliam.github.io/scripts.html">Scripts</a></button>
-<button><a href="https://blablabliam.github.io/projects/projects">Projects</a></button>
-</ul>
-<script type="text/javascript" src="//counter.websiteout.net/js/7/4/0/0"></script>
-</body>
+<html>
+	<!-- 	This is the "Head" of the HTML document.
+		It contains information that isn't displayed on the actual page, but is useful
+		for the web browser when loading the page	
+	-->
+	<head>
+		<!-- This is the title of the page. It is the text that appears inside this pages tab in your web browser -->
+		<title>Liam Plybon</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- 	This links to this page's CSS, which is contained in the folder assets/css and the file main.css.
+			 If you want to edit the styling of this page, you should edit the file assets/css/main.css
+			 If you have a new CSS file you'd like to add with custom styling, you should link to it here using:
+			 <link rel="stylesheet" href="assets/css/my-new-css-file.css"/> 
+		-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- 	In the case that the user's browser does not support JavaScript (unlikely, but possible), the page
+			will load a separate set of CSS stylings from the file assets/css/noscript.css
+			Any HTML contained inside <noscript></noscript> tags will be loaded in the event that JavaScript is not
+			available. 
+		-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<!-- The body is the location where your site's content will go -->
+	<body class="is-preload">
+
+			<!-- This "div" wraps around all of our content and just changes how things are layed out -->
+			<div id="wrapper">
+
+					<!-- This is where the content that appears on page load exists -->
+					<header id="header">
+						<!-- This is the main content of the front page -->
+						<div class="content">
+							<div class="inner">
+								<!-- Here is a heading where you can put your name -->
+								<h1>
+									Liam Plybon
+								</h1>
+								<!-- 	Here is an image where you can put a picture of you. 
+									You can change the width and height attributes below to change how large
+									your image is.
+
+									Try adding "border-radius: 50%;" to the style attribute.
+								-->
+								<img src="images/M33FullStack.png" style="width:280px; height:280px; object-fit: cover;">
+								<!-- 	Here is a paragraph where you can put your position and institution, or
+									a short line about yourself.
+								-->
+								<p>
+									Engineer || Astro-Physics Inc.
+								</p>
+								<!-- Here is a paragraph where you can put a link to your CV -->
+								<p>
+									<!-- Note you will want to change where this points to! -->
+									<a href="2021_CV.pdf" target="_blank">Curriculum Vitae</a>
+								</p>
+							</div>
+						</div>
+						<!-- This is the navigation menu -->
+						<nav>
+							<!-- This element makes an "Unordered List" -->
+							<ul>
+								<!-- This is a "List Item" -->
+								<li>
+									<!-- 	Note that this links to #about, which will move the page to wherever
+										the element with the id "about" exists.
+									-->
+									<a href="#about">About Me</a>
+								</li>
+								<li>
+									<a href="#research">Research</a>
+								</li>
+								<li>
+									<a href="#community">Community</a>
+								</li>
+								<li>
+									<a href="#contact">Contact</a>
+								</li>
+								<li> 
+									<a href="#astro_gallery">Astro </a>
+								</li>
+								<li>
+									<a href="#observe">Observing</a>
+								</li>
+								<li>
+									<a href="#projects">Projects</a>
+								</li>
+								<!-- 	You can add another button to your navigation menu by adding
+									another List Item with a link inside of it.
+								-->
+								<!-- <li>
+									<a href="images/Astronomy.jpg">My CV</a>
+								</li> -->
+							</ul>
+						</nav>
+					</header>
+
+					<!-- These are the "cards" that appear when you click the buttons on the main page -->
+					<div id="main">
+						<!-- 	Here is the "About Me" card. Note it has the id "about", which the previous 
+							button links to.
+						-->
+						<article id="about">
+							<h2 class="major">About Me</h2>
+							<!-- Here is an image that you can customize for this page -->
+							<span class="image main">
+								<img src="images/fullpic.jpg" alt=""/>
+							</span>
+							<!-- Here are three paragraphs where you can fill out information about yourself -->
+							<p>
+								<!-- Items contained in <b> tags are bolded! -->
+								<b>Education: </b> Bachelors of Science in Physics, Minor in Astrophysics from Texas A&M University. 
+							</p>
+							<p>
+								<b>Research Interests: </b> Variable Stars, Particle Astronomy, Material Science and Astronomical Software 
+							</p>
+							<p>
+								<b>Publications:</b> <a href="https://ui.adsabs.harvard.edu/abs/2019yCat..51580016S/abstract">VizieR Online Data Catalog: Identification of RR Lyrae stars from the DES (Stringer+, 2019)</a>, <a href="https://ui.adsabs.harvard.edu/abs/2019AJ....158...16S/abstract">Identification of RR Lyrae Stars in Multiband, Sparsely Sampled Data from the Dark Energy Survey Using Template Fitting and Random Forest Classification</a>
+							</p>
+							<p>
+								<b>Presentations: </b> <a href="AmateurParticleAstronomy.pptx">Amateur Particle Astronomy, Rockford Amateur Astronomers, Feb 2021</a> 
+						</article>
+
+						<!-- Here is the "Research" card. -->
+						<article id="research">
+							<h2 class="major">Research</h2>
+							<p>
+								<!-- 	A <br> tag puts in a break so that the text that follows it displays on
+									the next line.
+								-->
+								<b>DIY Muon Detectors</b><br>Scintillator and Geiger-Muller based muon detectors for use in amateur particle telescopes. With these, I hope to create the world's first amateur particle telescope network. I gave a talk on the subject for the Rockford Amateur Astronomers in 2021, and have gathered data with my latest detector based on the MIT Cosmic Watch detector design. Future developments planned are incorporating IoT into the detector so that many units can be operated on a large scale. The network will hunt for global cosmic ray anomalies, similar to the CRAYFIS and CREDO detector networks. 
+							</p>
+							<span class="image main">
+								<img src="images/ParticleDetectorBreadboard.jpg" alt="Breadboarded design for DIY muon detector."/>
+							</span>
+							<p>
+								<b>Variable Star Observations</b><br>Recording the magnitudes of variable stars visually and with CMOS cameras, with data recorded to the AAVSO under observer code PLLA. Observations can be viewed <a href="aavso.org">on AAVSO's website</a>.
+							</p>
+							<span class="image main">
+								<img src="images/SZLynLightcurve1-20-21.png" alt="Visual lightcurve of a fast variable star, SZ Lyn."/>
+							</span>
+						</article>
+
+						<!-- Here is the "Community" card. -->
+						<article id="community">
+							<h2 class="major">Community</h2>
+							<span class="image main">
+								<img src="images/pic03.jpg" alt=""/>
+							</span>
+							<p>
+								<b>Teaching:</b> Courses on electronics, circuit board design, and intro programming with arduinos. One-on-one tutoring in physics, mathematics and chemistry. 
+							</p>
+							<p>
+								<b>Outreach:</b> Star parties, maker faires, and talks make up the majority of my outreach events. 
+							</p>
+							<p>
+								<b>Equity & Inclusion:</b> I have taught hands-on astronomy to many girl scout troops, particularly in poorly served areas with lack of scientific access.
+							</p>
+							<p>
+								<b>Outreach on Demand:</b> If you are interested in having a professional astronomer to talk and demo for a school event, class, scout troop, or anything else, please contact me. I really like astronomy, and would be happy to share it with you. 
+							</p>
+						</article>
+
+						<!-- Here is a the "Contact" card. -->
+						<article id="contact">
+							<h2 class="major">Contact</h2>
+							<p> 
+								<b>Email:</b> lplybon1@gmail.com
+							</p>
+							<p> 
+								<b>Address:</b> 1003 Terra Pl, Longview TX 75604
+							</p>
+
+							<!-- 	Here are the fancy icons that link to your social media.
+								These icons are rendered using Font Awesome fonts, and you can find more icons
+								here: https://fontawesome.com/icons
+							-->
+							<ul class="icons">
+								<!-- The Facebook icon -->
+								<li>
+									<a href="https://www.facebook.com/liam.plybon.3/" class="icon fa-facebook" target="_blank">
+										<span class="label">Facebook</span>
+									</a>
+								</li>
+								<!-- The GitHub icon -->
+								<li>
+									<a href="#" class="icon fa-github" target="_blank">
+										<span class="label">GitHub</span>
+									</a>
+								</li>
+								<!-- 	We can add a new icon by searching on the Font Awesome website
+									for the correct class name and inserting it as a new list item.
+
+									We found "envelope" here: https://fontawesome.com/icons/envelope
+								-->
+								<li>
+									<a href="https://www.linkedin.com/in/liam-plybon-6bb054118/" class="icon fa-linkedin" target="_blank">
+										<span class="label">LinkedIn</span>
+									</a>
+								</li> 
+							</ul>
+						</article>
+							<!-- Here is the "Astro Gallery" card. -->
+						<article id="astro_gallery">
+							<h2 class="major">Astro Gallery</h2>
+							<span class="image main">
+								<img src="images/MoonCloseUpLabeled.png" alt="Moon close up, half illuminated.">
+							</span>
+							<p>
+								<b>Moon</b> Shot with a Samsung Galaxy S9 through an f/6 Orion StarBlast.
+							</p>
+							<span class="image main">
+								<img src="images/StarField1.png" alt="Mono Star Field.">
+							</span>
+							<p>
+								<b>Star Field</b> Taken on a RASA 8 for calibration.
+							</p>
+							<span class="image main">
+								<img src="images/M15RedStack.png" alt="M15 cluster.">
+							</span>
+							<p>
+								<b>M15</b> 30 minute stack.
+							</p>
+							<span class="image main">
+								<img src="images/HelixStackandCrop.png" alt="Helix Nebula in Black and White">	
+							</span>
+							<p>
+								<b>Helix Nebula</b>
+							</p>
+							<span class="image main">
+								<img src="images/2018W2Africanus.png" alt="Monochrome comet.">	
+							</span>
+							<p>
+								<b>Comet 2018 W2 Africanus:</b> Taken at OkieTex 2019 using the prototype Mach 2 mount. 50 image stack.
+							</p>
+							<span class="image main">
+								<img src="projects/images/astro/bloodmoon.jpg" alt="Blood Moon">
+							</span>
+							<p>
+								<b>Lunar Eclipse 1-20-19</b>
+							</p>
+							<span class="image main">
+								<img src="projects/images/astro/gaultmotion.gif" alt="Asteroid with tail.">
+							</span>
+							<p>
+								<b>Gault 6478, 2-12-19: </b>After a collision some time in November, Gault 6478 grew a tail. Measured here to 572,000 kilometers, this system is important to watch over time.
+							</p>
+							
+						</article>
+													<!-- Here is the "Astro Gallery" card. -->
+						<article id="observe">
+							<h2 class="major">Forecasts and Updates</h2>
+							<h2 class="minor">Sky forcast for Longview, Texas</h2>
+							<a href=https://www.cleardarksky.com/c/LngvwTXkey.html>
+							<span class="image main">
+								<img src="https://www.cleardarksky.com/c/LngvwTXcsk.gif?c=1087227"></a>
+							</span>
+							<p>
+								For more information on the Clear Sky Chart, visit <a href=https://www.cleardarksky.com/>the website</a>!
+							</p>
+						</article>
+						<!-- Here is the "Projects" card. -->
+						<article id="projects">
+							<h2 class="major">Projects</h2>
+							<!-- This is the navigation menu -->
+							
+								<!-- This element makes an "Unordered List" -->
+								<ul>
+									<!-- This is a "List Item" -->
+									<li>
+										<!-- 	Note that this links to #about, which will move the page to wherever
+											the element with the id "about" exists.
+										-->
+										<a href="#circuit">Circuit Board Design</a>
+									</li>
+									<li>
+										<a href="#wildlife">Wildlife</a>
+									</li>
+								<!-- 	You can add another button to your navigation menu by adding
+									another List Item with a link inside of it.
+								-->
+								<!-- <li>
+									<a href="images/Astronomy.jpg">My CV</a>
+								</li> -->
+								</ul>
+						
+						</article>
+
+					</div>
+
+					<!-- This is the footer that appears at the bottom of the page -->
+					<footer id="footer">
+						<!-- 	You can change "Untitled" to your name to show everyone that
+							this is your work.
+						-->
+						<p class="copyright">&copy; Liam Plybon. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+			<!--	This is the background image of the site.
+				All configuration of the background is done with CSS.
+				Look in the file assets/css/main.css and search for "#bg" to
+				see how this element is styled. Look for comments pointing 
+				to where you can set a new background image.
+			-->
+			<div id="bg"></div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
