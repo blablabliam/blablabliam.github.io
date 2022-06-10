@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>LAT-LONG Calculator</title>
+	
+<style>
+ p {
+	font:	normal 16px Verdana, Arial, 'sans-serif';
+}
+ h2 {
+	font: 	bold 22px Verdana, Arial, 'sans-serif';
+	}
+ body { 
+	background-color: powderblue;
+	}
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+</style>
+
+
+
+  </head>
+  <body>
+  
+
+<h2>Light shielding script</h2>
+
+<p>Get lit fam. All units of length are in meters (the unit of the world).</p>
+
+Shield Length: <input type="text" id="ShieldLength" name="Shield Length" value=".3"><br>
+Lamp Height: <input type="text" id="LampHeight" name="Lamp Height" value="5"><br>
+Distance from Lamp to Neighbor: <input type="text" id="Distance" name="Distance" value="25"><br>
+Lamp Elevation<input type="text" id="LampElevation" name="Lamp Elevation" value="372"><br>
+Neighbor Elevation: <input type="text" id="NeighborElevation" name="Neighbor Elevation" value="369"><br>
+
+
+<button type="button" onclick="calculateShield()">Calculate Shield</button>
+
+<table> 
+	<tr> 
+		<td>Light Angle to Ground Level</td>
+		<td id="cell1">Not yet calculated!</td>
+	</tr>
+	<tr> 
+		<td>Lamp Angle to Eye Level</td>
+		<td id="cell2">Not yet calculated!</td>
+	</tr>
+	<tr>
+		<td>Minimum Light Shield Depth for Ground Level</td>
+		<td id="cell3">Not yet calculated!</td>
+	</tr>
+	<tr>
+		<td>Minimum Light Shield Depth for Eye Level</td>
+		<td id="cell4">Not yet calculated!</td>
+	</tr>
+</table>
+
+
+<script>
+function radians_to_degrees(radians)
+{
+  var pi = Math.PI;
+  return radians * (180/pi);
+}
+function calculateShield() {
+//get initial numbers. All numbers are calculated in metric (meters) to meet global standards.Eyelevel is 1 meter by default, but can be changed.
+var shieldLength = Number(document.getElementById("ShieldLength").value);
+	var lightPostHeight = Number(document.getElementById("LampHeight").value);
+	var distance = Number(document.getElementById("Distance").value);
+	var lightPostElevation = Number(document.getElementById("LampElevation").value);
+	var neighborElevation = Number(document.getElementById("NeighborElevation").value);
+	var eyeLevel = 1;
+	//calculations
+	var elevationDifference = (lightPostElevation - neighborElevation);// + lightPostHeight;
+	var lightElevation = elevationDifference + lightPostHeight;
+	var lampAngleToGround = Math.atan(distance/lightElevation);
+	var lampAngleToEye = Math.atan(distance/(lightElevation+eyeLevel));
+	var shieldDepthToGround = Math.tan((Math.PI/2)-lampAngleToGround)*shieldLength;
+	var shieldDepthToEyeLevel = Math.tan((Math.PI/2)-lampAngleToEye)*shieldLength;
+	//displaying results
+	document.getElementById("cell1").innerHTML = radians_to_degrees(lampAngleToGround); 
+	document.getElementById("cell2").innerHTML = radians_to_degrees(lampAngleToEye);
+	document.getElementById("cell3").innerHTML = shieldDepthToGround;
+	document.getElementById("cell4").innerHTML = shieldDepthToEyeLevel;	
+    }
+</script>
+
+
+
+</body></html>
