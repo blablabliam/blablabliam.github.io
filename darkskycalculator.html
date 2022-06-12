@@ -27,32 +27,48 @@
 
 <h2>Light shielding script</h2>
 
-<p>Get lit fam. All units of length are in meters (the unit of the world).</p>
+<table>
+	<tr> 
+		<td>Shield Length: (cm/inch)</td>
+		<td><input type="text" id="ShieldLength" name="Shield Length" value="30"></td>
+	</tr>
+	<tr>
+		<td>Lamp Height: (m/ft)</td>
+		<td><input type="text" id="LampHeight" name="Lamp Height" value="5"></td>
+	</tr>
+	<tr>
+		<td>Distance from Lamp to Neighbor: (m/ft)</td>
+		<td><input type="text" id="Distance" name="Distance" value="25"></td>
+	</tr>
+	<tr>
+		<td>Lamp Elevation: (m/ft)</td>
+		<td><input type="text" id="LampElevation" name="Lamp Elevation" value="372"></td>
+	</tr>
+	<tr>
+		<td>Neighbor Elevation: (m/ft)</td>
+		<td><input type="text" id="NeighborElevation" name="Neighbor Elevation" value="369"></td>
+	</tr>
+</table>
 
-Shield Length: <input type="text" id="ShieldLength" name="Shield Length" value=".3"><br>
-Lamp Height: <input type="text" id="LampHeight" name="Lamp Height" value="5"><br>
-Distance from Lamp to Neighbor: <input type="text" id="Distance" name="Distance" value="25"><br>
-Lamp Elevation<input type="text" id="LampElevation" name="Lamp Elevation" value="372"><br>
-Neighbor Elevation: <input type="text" id="NeighborElevation" name="Neighbor Elevation" value="369"><br>
-
+<p>Imperial Mode: <input type="checkbox" id="imperialBox" onclick="myFunction()"> If checked, all units are in inches/feet instead of centimeters/meters. </p>
 
 <button type="button" onclick="calculateShield()">Calculate Shield</button>
 
 <table> 
 	<tr> 
-		<td>Light Angle to Ground Level</td>
+		<td>Light Angle to Ground Level (degrees)</td>
 		<td id="cell1">Not yet calculated!</td>
 	</tr>
 	<tr> 
-		<td>Lamp Angle to Eye Level</td>
+		<td>Lamp Angle to Eye Level (degrees)</td>
 		<td id="cell2">Not yet calculated!</td>
 	</tr>
 	<tr>
-		<td>Minimum Light Shield Depth for Ground Level</td>
+		<td>Minimum Light Shield Depth for Ground Level (cm/inch)</td>
 		<td id="cell3">Not yet calculated!</td>
 	</tr>
 	<tr>
-		<td>Minimum Light Shield Depth for Eye Level</td>
+		<td>Minimum Light Shield Depth for Eye Level (cm/inch)</td>
 		<td id="cell4">Not yet calculated!</td>
 	</tr>
 </table>
@@ -64,26 +80,60 @@ function radians_to_degrees(radians)
   var pi = Math.PI;
   return radians * (180/pi);
 }
+function metric_To_Imperial_Conversion(value) {
+//enabled is boolean, value is simply the number to be converted
+var enabled = document.getElementById("imperialBox");
+	if (enabled.checked == true){
+		return value * 3.28084;
+	  } else {
+		return value;
+	  }
+	} 
+function imperial_To_Metric_Conversion(value) {
+//enabled is boolean, value is simply the number to be converted
+var enabled = document.getElementById("imperialBox");
+	if (enabled.checked == true){
+		return value * 0.3048;
+	  } else {
+		return value;
+	  }
+	} 
 function calculateShield() {
-//get initial numbers. All numbers are calculated in metric (meters) to meet global standards.Eyelevel is 1 meter by default, but can be changed.
-var shieldLength = Number(document.getElementById("ShieldLength").value);
-	var lightPostHeight = Number(document.getElementById("LampHeight").value);
-	var distance = Number(document.getElementById("Distance").value);
-	var lightPostElevation = Number(document.getElementById("LampElevation").value);
-	var neighborElevation = Number(document.getElementById("NeighborElevation").value);
-	var eyeLevel = 1;
+	//get initial numbers. All numbers are calculated in metric (meters) to meet global standards.Eyelevel is 1 meter by default, but can be changed.
+	//if the checkbox is set to imperial, then the unit input is feet instead of meeters. All calcs are still performed in metric to ease calculations. 
+	var shieldLength = imperial_To_Metric_Conversion(Number(document.getElementById("ShieldLength").value));
+	var lightPostHeight = imperial_To_Metric_Conversion(Number(document.getElementById("LampHeight").value));
+	var distance = imperial_To_Metric_Conversion(Number(document.getElementById("Distance").value));
+	var lightPostElevation = imperial_To_Metric_Conversion(Number(document.getElementById("LampElevation").value));
+	var neighborElevation = imperial_To_Metric_Conversion(Number(document.getElementById("NeighborElevation").value));
+	var eyeLevel = imperial_To_Metric_Conversion(1);
+	//convert input cm/inch to meter/feet
+	var enabled = document.getElementById("imperialBox").checked;
+	if (enabled == true){
+		shieldLength = shieldLength / 12.0;
+	} else {
+		shieldLength = shieldLength / 100.0;
+	}
 	//calculations
 	var elevationDifference = (lightPostElevation - neighborElevation);// + lightPostHeight;
-	var lightElevation = elevationDifference + lightPostHeight;
+	var lightElevation = elevationDifference - lightPostHeight;
 	var lampAngleToGround = Math.atan(distance/lightElevation);
 	var lampAngleToEye = Math.atan(distance/(lightElevation+eyeLevel));
 	var shieldDepthToGround = Math.tan((Math.PI/2)-lampAngleToGround)*shieldLength;
 	var shieldDepthToEyeLevel = Math.tan((Math.PI/2)-lampAngleToEye)*shieldLength;
+	//convert output cm/inch to meter/feet
+	if (enabled == true){
+		shieldDepthToEyeLevel = shieldDepthToEyeLevel * 12.0;
+		shieldDepthToGround = shieldDepthToGround * 12.0;
+	} else {
+		shieldDepthToEyeLevel = shieldDepthToEyeLevel * 100.0;
+		shieldDepthToGround = shieldDepthToGround * 100.0;
+	}
 	//displaying results
 	document.getElementById("cell1").innerHTML = radians_to_degrees(lampAngleToGround); 
 	document.getElementById("cell2").innerHTML = radians_to_degrees(lampAngleToEye);
-	document.getElementById("cell3").innerHTML = shieldDepthToGround;
-	document.getElementById("cell4").innerHTML = shieldDepthToEyeLevel;	
+	document.getElementById("cell3").innerHTML = metric_To_Imperial_Conversion(shieldDepthToGround);
+	document.getElementById("cell4").innerHTML = metric_To_Imperial_Conversion(shieldDepthToEyeLevel);	
     }
 </script>
 
