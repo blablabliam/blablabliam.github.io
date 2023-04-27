@@ -7,7 +7,7 @@
 <html>
 	<!-- 	This is the "Head" of the HTML document.
 		It contains information that isn't displayed on the actual page, but is useful
-		for the web browser when loading the page	
+		for the web browser when loading the page
 	-->
 	<head>
 		<!-- This is the title of the page. It is the text that appears inside this pages tab in your web browser -->
@@ -17,18 +17,18 @@
 		<!-- 	This links to this page's CSS, which is contained in the folder assets/css and the file main.css.
 			 If you want to edit the styling of this page, you should edit the file assets/css/main.css
 			 If you have a new CSS file you'd like to add with custom styling, you should link to it here using:
-			 <link rel="stylesheet" href="assets/css/my-new-css-file.css"/> 
+			 <link rel="stylesheet" href="assets/css/my-new-css-file.css"/>
 		-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- 	In the case that the user's browser does not support JavaScript (unlikely, but possible), the page
 			will load a separate set of CSS stylings from the file assets/css/noscript.css
 			Any HTML contained inside <noscript></noscript> tags will be loaded in the event that JavaScript is not
-			available. 
+			available.
 		-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="icon.png">
-		<!-- This script connects to the fontawesome website for additional icons that are not pre-downloaded in the 
-		assets folder. For anyone using this besides me, please update the link with a link that FontAwesome will 
+		<!-- This script connects to the fontawesome website for additional icons that are not pre-downloaded in the
+		assets folder. For anyone using this besides me, please update the link with a link that FontAwesome will
 		give you upon making a new account. -->
 		<script src="https://kit.fontawesome.com/9f7c41b3c9.js" crossorigin="anonymous"></script>
 	</head>
@@ -47,7 +47,7 @@
 								<h1>
 									Astrophotography Gallery
 								</h1>
-								<!-- 	Here is an image where you can put a picture of you. 
+								<!-- 	Here is an image where you can put a picture of you.
 									You can change the width and height attributes below to change how large
 									your image is.
 
@@ -58,7 +58,7 @@
 									a short line about yourself.
 								-->
 								<p>
-									Please enjoy. 
+									Please enjoy.
 								</p>
 								<!-- Here is a paragraph where you can put a link to your CV -->
 								<!-- <p> -->
@@ -90,12 +90,18 @@
 
 					<!-- These are the "cards" that appear when you click the buttons on the main page -->
 					<div id="main">
-						<!-- 	Here is the "About Me" card. Note it has the id "about", which the previous 
+						<!-- 	Here is the "About Me" card. Note it has the id "about", which the previous
 							button links to.
 						-->
 						<article id="deepsky">
 							<h2 class="major">Deep Sky</h2>
 							<!-- Here is an image that you can customize for this page -->
+							<span class="image main">
+								<img src="images/arsincstackIC361signed.png" alt="IC 361, a faint cluster.">
+							</span>
+							<p>
+								<b>IC 361, 1-22-23</b> 2 hour integration of IC 361 in Luminance. RASA 8 telescope, 1600MM camera with 10 second exposures, Celestron AVX mount. Unguided.
+							</p>
 							<span class="image main">
 								<img src="images/M5.png" alt="Messier 5, the Rose Cluster.">
 							</span>
@@ -127,14 +133,14 @@
 								<b>M15</b> 30 minute stack.
 							</p>
 							<span class="image main">
-								<img src="images/HelixStackandCrop.png" alt="Helix Nebula in Black and White">	
+								<img src="images/HelixStackandCrop.png" alt="Helix Nebula in Black and White">
 							</span>
 							<p>
-								<b>Helix Nebula</b> Stacked from 8 hours of images at OkieTex 2019 on a prototype Mach 2. 
+								<b>Helix Nebula</b> Stacked from 8 hours of images at OkieTex 2019 on a prototype Mach 2.
 							</p>
 
 
-						
+
 						</article>
 
 						<!-- Here is the "Research" card. -->
@@ -145,7 +151,7 @@
 							</span>
 							<p>
 								<b>Moon 5-15-22</b> The lunar eclipse moments before cloud cover ruined the night, taken on an Orion Starblast f/6 on a Galaxy S9 phone. Stack of best 1000 frames over a 30 second video. Processed in PIPP, AutoStakkert!, and GIMP. Left is with normal levels, while the right image has been enhanced with extra contrast.
-							</p>							
+							</p>
 							<span class="image main">
 								<img src="images/MoonQHY5.png" alt="Monochrome Moon.">
 							</span>
@@ -159,7 +165,7 @@
 								<b>Moon 7-17-21</b> Shot with a Samsung Galaxy S9 through an f/6 Orion StarBlast.
 							</p>
 							<span class="image main">
-								<img src="images/2018W2Africanus.png" alt="Monochrome comet.">	
+								<img src="images/2018W2Africanus.png" alt="Monochrome comet.">
 							</span>
 							<p>
 								<b>Comet 2018 W2 Africanus:</b> Taken at OkieTex 2019 using the prototype Mach 2 mount. 50 image stack.
@@ -176,8 +182,8 @@
 							<p>
 								<b>Gault 6478, 2-12-19: </b>After a collision some time in November, Gault 6478 grew a tail. Measured here to 572,000 kilometers, this system is important to watch over time.
 							</p>
-							
-						
+
+
 						</article>
 
 						<!-- Here is the "Star Field" card. -->
@@ -206,7 +212,7 @@
 			<!--	This is the background image of the site.
 				All configuration of the background is done with CSS.
 				Look in the file assets/css/main.css and search for "#bg" to
-				see how this element is styled. Look for comments pointing 
+				see how this element is styled. Look for comments pointing
 				to where you can set a new background image.
 			-->
 			<div id="bg"></div>
