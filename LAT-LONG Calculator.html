@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>LAT-LONG Calculator</title>
+	
+<style>
+ p {
+	font:	normal 16px Verdana, Arial, 'sans-serif';
+}
+ h2 {
+	font: 	bold 22px Verdana, Arial, 'sans-serif';
+	}
+ body { 
+	background-color: powderblue;
+	}
+</style>
+
+
+
+  </head>
+  <body>
+  
+<h2>CPx IP Address Calculator</h2>
+  
+<p>Enter the CPx Serial Number in the text box, and press Calculate to get the Default IP Address of the CPx. Example number: 1753</p>
+
+<input type="text" id="SN" name="Serial Number" value="1753"><br>
+
+<p id="demo">Default IP</p>
+
+<script>
+function calculateIP() {
+var number = document.getElementById("SN").value;
+    var iP1 = "169.254";
+    var iP3 = Math.floor(number / 256);
+    var iP4 = 256 * ( (number / 256) - Math.floor(number/256));
+    var iP = iP1 + "." + iP3 + "." + iP4;
+    document.getElementById("demo").innerHTML = "Your Default IP address is:    " + iP;
+    }
+function calculateCoords()	{
+var lat = document.getElementById("latt").value;
+///if the index of -  or + returns a -1, there the symbol isn't used. Easy peasy ns detection.
+	var s = lat.indexOf("-");
+	var n = lat.indexOf("+");
+	if (n < s) {
+	var latsign = "-";
+	} else {
+	var latsign = "";
+	}
+///degrees are degrees. Get all the numbers to the left of the decimal point.
+	var lat = lat.replace("+", "").replace("-", "");
+	var decimalpoint = lat.indexOf(".");
+	var latdeg = lat.substring(0, decimalpoint);
+///get the minutes by using the remainder 
+	var lat = lat.slice(decimalpoint);
+	var latmin = Math.floor(lat * 60.0);
+///get seconds by using the final remainder
+	var lat = lat - latmin*(1.0/60.0);
+	var latsec = lat*3600.0;
+	var latsec = latsec.toString().substring(0, 5);
+	document.getElementById("latti").innerHTML = "Latitude:   " + latsign + latdeg + " degrees, " + latmin + " minutes, " + latsec + " seconds";
+	var lon = document.getElementById("lon").value;
+///get sign and degree in same way
+	var e = lon.indexOf("+");
+	var w = lon.indexOf("-");
+	if (e < w) {
+	var lonsign = "-";
+	} else {
+	var lonsign = "";
+	}
+///degrees are easy. 
+	var lon = lon.replace("+", "").replace("-", "");
+	var decimalposition = lon.indexOf(".");
+	var londeg = lon.substring(0, decimalposition);
+///Minutes in the same way
+	var lon = lon.slice(decimalpoint);
+	var lonmin = Math.floor(lon * 60.0);
+//seconds too
+	var lon = lon - lonmin*(1.0/60.0);
+	var lonsec = lon*3600.0;
+	var lonsec = lonsec.toString().substring(0,5);
+	document.getElementById("longi").innerHTML = "Longitude:   " + lonsign + londeg + " degrees, " + lonmin + " minutes, " + lonsec + " seconds";
+
+	
+	
+	
+	
+	
+	
+	
+	}
+</script>
+
+<button type="button" onclick="calculateIP()">Calculate</button>
+
+<pre>
+
+</pre>
+
+<h2>Latitude / Longitude Coordinate Converter</h2>
+
+<p>Enter local coordinates in decimal degrees, and press Calculate 
+Coordinates to get the Degree:Minute:Second format. Example: AP HQ 
+coordinates in decimal degree form converted to Degree:Minute:Second 
+form. Example coords: +42.381785, -89.017385</p>
+
+<input type="text" id="latt" name="Latitude" value="+42.381785"><br>
+
+<input type="text" id="lon" name="Longitude" value="-89.017385"><br>
+
+<p id="latti">Latitude</p>
+
+<p id="longi">Longitude</p>
+
+<button type="button" onclick="calculateCoords()">Calculate Coordinates</button>
+
+  
+
+</body></html>
